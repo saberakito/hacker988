@@ -1,0 +1,867 @@
+@charset "utf-8";
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: "Kanit", "Zawgyi-One", "Tahoma", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #333;
+    font-size: 13px;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #FFF;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table td {
+    border-top: 0;
+}
+
+.image_bacara {
+    width: 100%;
+    display: none;
+}
+
+.image_bacara img {
+    width: 100%;
+}
+
+.image_bacara2 {
+    width: 100%;
+}
+
+.image_bacara2 img {
+    width: 100%;
+}
+
+.textPercent {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+    padding-bottom: 20px;
+}
+
+#MainContent_btPlayer {
+    width: 100px;
+}
+
+#MainContent_btTie {
+    width: 100px;
+}
+
+#MainContent_btBanker {
+    width: 100px;
+}
+
+.bet_body {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.div_stat {
+    float: left;
+    width: 100%;
+}
+
+.text_total {
+    font-size: 1.2em;
+    text-align: center;
+    color: white;
+}
+
+.area_stat_div {
+    background: url('/assets/images/icon/9.png');
+    background-size: 100% 100%;
+    width: 70%;
+    margin: 10px auto;
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+.player_btn {
+    background: url('/assets/images/icon/P.png');
+    background-size: 100% 100%;
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.tie_btn {
+    background: url('/assets/images/icon/T.png');
+    background-size: 100% 100%;
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.banker_btn {
+    background: url('/assets/images/icon/B.png');
+    background-size: 100% 100%;
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+a {
+    color: #000;
+}
+
+.empty_ {
+    background: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 4px;
+}
+
+.text_line {
+    padding-top: 10px;
+    color: #05AD14;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.btn_area {
+    padding-top: 20px;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.user_area {
+    float: left;
+    width: 100%;
+    color: white;
+    padding-left: 20px;
+}
+
+.btn_user {
+    float: left;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.username_text {
+    padding-bottom: 10px;
+}
+
+.credit_text {
+    padding-bottom: 10px;
+}
+
+.main_content {
+    padding: 20px;
+    overflow: hidden;
+}
+
+.titleStat {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 1.8em;
+    color: black;
+    text-align: center;
+}
+
+.imgStat {
+    width: 20px;
+}
+
+.titleContent {
+    padding-top: 0px;
+    font-size: 2em;
+    color: black;
+    text-align: center;
+}
+
+#rsDataTable {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left: 3px solid #BE8007;
+    border-right: 3px solid #BE8007;
+    border-bottom: 3px solid #BE8007;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.hover:hover {
+    cursor: pointer;
+}
+
+.header {
+    height: 80px;
+}
+
+#alertBackspace {
+    width: 200px;
+    height: 50px;
+    line-height: 35px;
+    border-radius: 5px;
+    padding-top: 8px;
+    background: url('/assets/images/icon/8.png');
+    background-size: 100% 100%;
+    font-size: 1.2em;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+}
+
+#alertClear {
+    width: 200px;
+    height: 50px;
+    line-height: 35px;
+    border-radius: 5px;
+    padding-top: 8px;
+    background: url('/assets/images/icon/8.png');
+    background-size: 100% 100%;
+    font-size: 1.2em;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+}
+
+#lgoutClear {
+    width: 130px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    border: 1px solid #FF3366;
+    background: #C30;
+    font-size: 16px;
+    text-align: center;
+    display: inline-block
+}
+
+#creditClear {
+    width: 110px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    border: 1px solid #00Aeee;
+    background: #00ADEF;
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#manageUser {
+    width: 250px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    border: 1px solid #3CB222;
+    background: #3CB879;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#lgoutClear a,
+#alertClear a,
+#alertBackspace a,
+#creditClear a {
+    color: #fff;
+}
+
+.main_body {
+    margin-top: 15px;
+    overflow-x: auto;
+}
+
+a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.box_game {
+    width: 30px;
+    height: px;
+    display: inline-block;
+    background: #CCC;
+    border: 1px solid #333;
+}
+
+.navbar-default {
+    background: none;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #000;
+    font-size: 24px;
+}
+
+#letter_banker {
+    padding: 25px;
+    background: #C30;
+}
+
+#letter_player {
+    padding: 25px;
+    background: #02687F;
+}
+
+table#formula td {
+    width: 22px;
+    height: 22px;
+    background: #111;
+    padding: 0px;
+    margin: 0px;
+}
+
+table#formula tr td:hover {
+    background: #333333;
+}
+
+table#statmem tr {
+    background: #1B1B1B;
+}
+
+table#statmem td {
+    padding: 3px;
+    margin: 0px;
+    text-align: center;
+}
+
+table#statmem td div {
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.main_body_col2_contact_line {
+    width: 100%;
+    padding: 10px 20px;
+    ;
+    background: #00b900;
+    border-radius: 10px;
+    margin: 10px 0 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+.main_body_col2_contact_line03 {
+    width: 80px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 5px;
+    margin: 1px 0 0 calc(50% - 40px);
+    background: #1b1b1b;
+    cursor: pointer;
+    font-size: 12px;
+    color: #01b101;
+}
+
+.main_body_col1_table_body #table_chips_player {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 0px 0 0 0px;
+}
+
+.main_body_col1_table_body #table_chips_tie {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 0px 0 0 0px;
+}
+
+.main_body_col1_table_body #table_chips_banker {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 0px 0 0 0px;
+}
+
+.labelcount_number {
+    width: 100%;
+    font-family: SukhumvitSet-Bold;
+    font-size: 46px;
+    color: #fff;
+    text-align: center;
+    border: 2px solid #19181C;
+    display: block;
+    padding: 26px;
+    background: #252525;
+}
+
+.main_body_col1_result_col1_labelcount_txt {
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.main_body_col1_result_col1 {
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    display: block;
+}
+
+#resultLabel {
+    font-size: 36px;
+    padding: 10px;
+    height: 60px;
+}
+
+.main_body_col1_result_col1_labelcount_txt {
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.main_body_col1_result_col1 {
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    display: block;
+}
+
+.table_title {
+    padding: 10px 5px;
+    margin: 10px 0;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fceabb+0,fccd4d+50,f8b500+51,fbdf93+100;Orange+3D+%235 */
+    background-color: #404040;
+}
+
+#arrybet {
+    background: url("/assets/images/icon/6.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    border: 0px solid white;
+    padding: 12px 0px;
+    float: left;
+    width: 100%;
+    min-height: 300px;
+}
+
+#arrymember {
+    float: left;
+    width: 100%;
+    background: url("/assets/images/icon/6.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    height: 100%;
+    /* min-height: 260px; */
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+#arrymember h1 {
+    padding: 10px 5px;
+    background: #000;
+    margin: 0px 0 10px;
+    font-size: 24px;
+    border: 2px solid green;
+    color: #fff;
+}
+
+.chips_player,
+.chips_tie,
+.chips_banker {
+    width: 20px;
+    height: 20px;
+}
+
+.chips_player {
+    background-image: url(/assets/images/icon/chips_player.png);
+    /* background-image: url(/assets/images/icon/chips_player.png); */
+    text-align: center;
+}
+
+.chips_tie {
+    background: url(/assets/images/icon/chips_tie.png);
+    /* background: url(/assets/images/icon/chips_tie.png);  */
+}
+
+.chips_banker {
+    background: url(/assets/images/icon/chips_banker.png);
+    /* background: url(/assets/images/icon/chips_banker.png);  */
+}
+
+.predict_0 {
+    text-align: center;
+    background: #F66;
+    color: white;
+}
+
+.predict_1 {
+    text-align: center;
+    background: #093;
+    color: white;
+}
+
+.predict_2 {
+    text-align: center;
+    background: #FC6;
+    color: white;
+}
+
+#letter_wl_win {
+    padding: 10px;
+    background: #00CC33;
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    margin: 5px;
+}
+
+#letter_wl_draw {
+    padding: 10px;
+    background: #FC6;
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    margin: 5px;
+}
+
+#letter_wl_lose {
+    padding: 10px;
+    background: #F66;
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    margin: 5px;
+}
+
+#letter_wait {
+    padding: 23px;
+    border: 2px solid #B38A30;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#dcbd70+0,b99138+36,b38a30+100 */
+    background: rgb(220, 189, 112);
+    /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(220, 189, 112, 1) 0%, rgba(185, 145, 56, 1) 36%, rgba(179, 138, 48, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(220, 189, 112, 1) 0%, rgba(185, 145, 56, 1) 36%, rgba(179, 138, 48, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(220, 189, 112, 1) 0%, rgba(185, 145, 56, 1) 36%, rgba(179, 138, 48, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#dcbd70', endColorstr='#b38a30', GradientType=0);
+    /* IE6-9 */
+}
+
+#letter_player {
+    padding: 25px;
+    background: #02687F;
+}
+
+#letter_banker {
+    padding: 25px;
+    background: #C30;
+}
+
+#body_tip {
+    background: #1B1B1B;
+    border: 2px solid rgb(255, 255, 255, 0.2);
+    ;
+    color: #CCC;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#table_chips_player {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 0px 0 0 0px;
+}
+
+#table_chips_banker {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 0px 0 0 0px;
+}
+
+.main .main_body_col1_table_body table #table_chips_tie {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 0px 0 0 0px;
+}
+
+.navbar {
+    border: 0;
+    margin-top: 5px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #AAAAAA;
+}
+
+.navbar-collapse {
+    border: 0px;
+    background: #111111;
+}
+
+@media (max-width: 480px) {
+    .navbar-header {
+        height: 0;
+    }
+    .navbar-toggle {
+        background: none;
+    }
+    .navbar-default {
+        height: auto;
+    }
+    .navbar-default .navbar-nav>li {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        width: 32%;
+        display: inline-block;
+        border: 0px;
+        margin: 0 0;
+    }
+    .navbar-default .navbar-nav>li>a {
+        color: #FFF;
+        text-align: center;
+        width: 100%;
+        font-size: 14px;
+        padding: 8px 0px 8px 0px;
+        border-bottom: 1px solid #666;
+        border-left: 1px solid #666;
+        font-weight: bold;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a90329+0,8f0222+44,6d0019+100;Brown+Red+3D */
+        background: #a90329;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #a90329 0%, #8f0222 44%, #6d0019 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019', GradientType=0);
+        /* IE6-9 */
+    }
+    .navbar-default .navbar-nav>li.ico-new>a {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fceabb+0,fccd4d+50,f8b500+51,fbdf93+100;Orange+3D+%235 */
+        background: #fceabb;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#fbdf93', GradientType=0);
+        /* IE6-9 */
+        color: #000!important;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .titleStat {
+        padding-top: 14px;
+        padding-bottom: 8px;
+    }
+}
+
+@media screen and (min-width: 425px) {
+    #rsDataTable {
+        padding-top: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-left: 3px solid #BE8007;
+        border-right: 3px solid #BE8007;
+        border-bottom: 3px solid #BE8007;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        float: left;
+        width: 100%;
+    }
+    .titleStat {
+        padding-top: 16px;
+        padding-bottom: 19px;
+    }
+    #arrymember {
+        margin-bottom: 20px;
+    }
+    .titleContent {
+        padding-bottom: 16px;
+    }
+    .bet_body {
+        width: 65%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #arrymember {
+        width: 350px;
+        margin-right: 14px;
+    }
+    .image_bacara {
+        width: 50%;
+        margin: auto;
+        display: none;
+    }
+    .image_bacara img {
+        width: 100%;
+        margin: auto;
+    }
+    .image_bacara2 {
+        width: 50%;
+        margin: auto;
+    }
+    .image_bacara2 img {
+        width: 100%;
+        margin: auto;
+    }
+    #arrymember {
+        background-size: 100% 72px;
+    }
+    #arrybet {
+        background-size: 100% 72px;
+    }
+    .bet_body {
+        width: 32%;
+    }
+    .area_stat_div {
+        width: 100%;
+    }
+    .text_total {
+        padding-top: 20px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .image_bacara2 {
+        display: none;
+    }
+    .image_bacara {
+        margin: unset;
+        width: 100%;
+        display: block;
+    }
+    .area_qr {
+        margin-left: 20px;
+    }
+    .area_left {
+        width: 300px;
+        float: left;
+        padding-right: 10px;
+    }
+    .area_right {
+        width: 620px;
+        float: left;
+        padding-left: 10px;
+    }
+    .titleStat {
+        padding-top: 16px;
+        padding-bottom: 8px;
+    }
+    .bet_body {
+        width: 41%;
+    }
+    .titleContent {
+        padding-bottom: 8px;
+    }
+    #arrymember {
+        width: 280px;
+    }
+    #arrybet {
+        width: 620px;
+    }
+    #arrymember {
+        background-size: 100% 60px;
+    }
+    #arrybet {
+        background-size: 100% 60px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .area_right {
+        width: 240px;
+        float: left;
+        padding-left: 10px;
+    }
+    #arrybet {
+        width: 570px;
+    }
+    .area_qr {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .area_left {
+        width: 320px;
+        float: left;
+        padding-right: 10px;
+    }
+    .area_right {
+        width: 320px;
+        float: left;
+        padding-left: 10px;
+    }
+    .titleContent {
+        padding-bottom: 2px;
+    }
+    .titleStat {
+        padding-bottom: 8px;
+    }
+    #arrymember {
+        width: 100%;
+    }
+    #arrybet {
+        width: 820px;
+        background: url(/assets/images/icon/4.png);
+        background-repeat: no-repeat;
+        background-size: 820px 50px;
+        padding: 8px 0px;
+    }
+    .bet_body {
+        width: 28%;
+        margin: 0 auto;
+    }
+    .area_stat_div {
+        background: url(/assets/images/icon/9.png);
+        background-size: 100% 100%;
+        width: 100%;
+        margin: 10px auto;
+        font-size: 2em;
+        color: white;
+        text-align: center;
+        padding-top: 0px;
+    }
+    .text_total {
+        font-size: 1.5em;
+        padding-top: 20px;
+    }
+}

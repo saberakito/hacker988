@@ -1,0 +1,53 @@
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-pic js-tilt" data-tilt>
+                <img src="/upload/file/{{image_name}}.{{image_type}}" alt="IMG">
+            </div>
+
+            <form autocomplete="new-password" class="form-horizontal ng-pristine ng-valid ng-touched" #form='ngForm' style="padding: 20px;" (ngSubmit)="onSubmit(form)">
+                <span class="login100-form-title">
+                    เติมเครดิทด้วย บัตรเงินสด True money
+                </span>
+
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" type="text" name="truewallet_cash" [(ngModel)]="truewallet_cash" placeholder="ใส่รหัสบัตรเงินสดทรูมันนี่">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-id-card-o" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <!-- <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <input class="input100" type="password" name="pass" placeholder="Password">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                    </span>
+                </div> -->
+
+                <div class="container-login100-form-btn">
+                    <button type="submit" class="login100-form-btn">
+                        เติม
+                    </button>
+                </div>
+
+                <div class="text-center p-t-12">
+                    <span class="txt1">
+                        เติมผ่านแอพทรูวอลเล็ท
+                    </span>
+                    <span class="txt2">
+                        {{true_id}}
+                    </span>
+                </div>
+
+                <div class="text-center p-t-136">
+                    <a class="txt2" [routerLink]="['/home']">
+                        หน้าแรก
+                        <i class="fa fa-arrow-left m-l-5" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

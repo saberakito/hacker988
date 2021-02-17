@@ -1,0 +1,784 @@
+<div class="container">
+    <div class="main_content">
+        <div class="area_left">
+            <div id="arrymember">
+                <div class="titleStat"><img class="imgStat" src="/assets/images/icon/icon1.png" alt=""> ข้อมูลสมาชิก</div>
+                <div id="rsDataTable">
+                    <div class="user_area">
+
+                        <ng-container *ngIf="login_status_check!='1'">
+                            <!-- <div class="hover" style="color: white;" id="lgoutClear" routerLink="/register">
+                                    สมัครสมาชิก 
+                            </div>   -->
+                            <div class="hover" id="alertClear" routerLink="/login">
+                                เข้าสู่ระบบ
+                            </div>
+                            <div class="hover" id="alertClear" routerLink="/register">
+                                สมัครสมาชิก
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="login_status_check=='1'">
+                            <div class="username_text">
+                                <span><img src="/assets/images/icon/user.png" alt="" style="filter: brightness(0) invert(1);"> Useranme : {{username}}</span>
+                            </div>
+
+                            <div class="credit_text">
+                                <span>
+                                    <img src="/assets/images/icon/thailand-baht.png" alt="" style="filter: brightness(0) invert(1);"> 
+                                    เครดิตคงเหลือ : <span style="color:#139417" id="member_credit">{{member_credit}}</span>
+                                </span>
+                            </div>
+                        </ng-container>
+
+
+                    </div>
+                    <div class="btn_user">
+                        <ng-container *ngIf="login_status_check=='1'">
+                            <ng-container *ngIf="trueStatus=='2'">
+                                <div routerLink="/truewallet" id="creditClear" class="hover" style="color: white;">
+                                    <i class=" glyphicon glyphicon-credit-card"></i> เติมเครดิต
+                                </div>
+                            </ng-container>
+
+                            <ng-container *ngIf="trueStatus=='1'">
+                                <a target="_blank" href="http://line.me/ti/p/~{{textQrCode}}">
+                                    <div id="creditClear" class="hover" style="color: white;">
+                                        <i class=" glyphicon glyphicon-credit-card"></i> เติมเครดิต
+                                    </div>
+                                </a>
+
+                            </ng-container>
+
+
+                            <div (click)="logout_fn()" id="lgoutClear" class="hover">
+                                <i class="glyphicon glyphicon-log-out"></i> ออกจากระบบ
+                            </div>
+
+                            <!-- <div (click)="logout_fn()" id="manageUser" class="hover">
+                                <i class=" glyphicon glyphicon-cog"></i> จัดการผู้ใช้งานระบบ
+                            </div> -->
+
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+
+            <div id="arrymember">
+                <div class="titleStat"><img class="imgStat" src="/assets/images/icon/icon1.png" alt=""> อัตราการชนะแบบตรง</div>
+                <div id="rsDataTable">
+                    <ng-container *ngIf="type_win=='1'">
+                        <circle-progress [showTitle]=t rue [showSubtitle]=f alse [showUnits]=t rue [percent]="percentWin" [maxPercent]="100" [animateTitle]=f alse [titleColor]="'white'" [unitsColor]="'white'" [radius]="60" [outerStrokeWidth]="10" [innerStrokeWidth]="8" [outerStrokeColor]="'#337AB7'"
+                            [innerStrokeColor]="'#D9534F'" [animation]="false" [animationDuration]="300">
+                        </circle-progress>
+                    </ng-container>
+                    <ng-container *ngIf="type_win!='1'">
+                        <circle-progress [showTitle]=t rue [showSubtitle]=f alse [showUnits]=t rue [percent]="percentWin" [maxPercent]="100" [animateTitle]=f alse [titleColor]="'white'" [unitsColor]="'white'" [radius]="60" [outerStrokeWidth]="10" [innerStrokeWidth]="8" [outerStrokeColor]="'#D9534F'"
+                            [innerStrokeColor]="'#337AB7'" [animation]="false" [animationDuration]="300">
+                        </circle-progress>
+                    </ng-container>
+
+                    <div class="textPercent">ความน่าจะเป็นของสถิติ</div>
+                    <div class="process_body">
+                        <div class="main_body_col1_result_col1" style="padding-bottom: 20px;">
+                            <div id="resultLabel">
+                                <span class="badge-secondary" style="padding-left:20px;padding-right:20px; border-radius:5px;">**รอผล**</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="image_bacara">
+                <img src="/upload/file/{{image_name_ads}}.{{image_type_ads}}" alt="">
+                <!-- <img src="/assets/images/icon/3.png" alt=""> -->
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div id="arrybet" style="margin-top: 0;">
+            <div class="titleContent">โปรแกรมสูตรบาคาร่า</div>
+            <div id="rsDataTable">
+                <div class="btn_area">
+                    <ng-container *ngIf="login_status_check=='1'">
+                        <div id="alertBackspace" class="hover">
+                            <div> เลือกสูตรใหม่ </div>
+                        </div>
+                        <div (click)="delBetStat()" id="alertBackspace" class="hover">
+                            <div> ลบผิด </div>
+                        </div>
+                        <div id="alertClear" (click)="reload()" class="hover">
+                            เริ่มใหม่
+                        </div>
+                    </ng-container>
+
+
+                </div>
+
+
+
+
+
+                <div class="col-md-12 col-xs-12">
+                    <div class="table_title">รอเข้าสูตร</div>
+                    <div class="main_body">
+
+                        <table id="formula" class="table table-borderless">
+                            <tbody>
+                                <tr class="tr1">
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                </tr>
+                                <tr class="tr2">
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                </tr>
+                                <tr class="tr3">
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                </tr>
+                                <tr class="tr4">
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                </tr>
+                                <tr class="tr5">
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                </tr>
+                                <tr class="tr6">
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                </tr>
+                                <tr class="tr7">
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                </tr>
+                                <tr class="tr8">
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                    <td>
+                                        <div class="empty_"></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 col-xs-12" style=" margin-bottom:10px;">
+
+                    <div class="bet_body">
+                        <div class="col-md-12 col-xs-12">
+                            <div (click)="betStat('player')" class="hover player_btn">
+
+                            </div>
+                            <div (click)="betStat('tie')" class="hover tie_btn">
+
+                            </div>
+                            <div (click)="betStat('banker')" class="hover banker_btn">
+
+                            </div>
+
+                            <!-- <input type="button" name="btPlayer" value="Player" id="MainContent_btPlayer" (click)="betStat('player')" class="btn btn-lg btn-primary " >
+                        <input type="button" name="btTie" value="Tie" id="MainContent_btTie" class="btn btn-lg btn-success" (click)="betStat('tie')" >
+                        <input type="button" name="btBanker" value="Banker" id="MainContent_btBanker" class="btn btn-lg btn-danger" (click)="betStat('banker')"> -->
+
+                        </div>
+
+                        <div class="col-md-12 col-xs-12">
+                            <div id="resultLabel_wl"> </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+                <!--<div id="letter_player">player</div> -->
+
+                <!-- <div class="col-md-12 col-xs-12" style="margin-top:10px">
+                <div class="col-md-12 col-xs-12" id="body_tip">
+                <div class="main_body_control_tip_tab2">เคล็ดลับ</div>
+                <div class="main_body_control_tip">1. กรอกสูตรตามไพ่ที่ออก ย้อนหลัง 5 ตาขึ้นไป<br>
+                2. รอผลสูตรออก และแทงตามผลไพ่ที่โอกาสออก<br>
+                3. ถ้าผลทายถูกต้อง จะหักเครดิตออก 1 เครดิต<br>
+                <span style="color:#F60"> * หากไม่แน่ใจในการวิเคราะห์ไพ่ ไม่ควรแทงตานั้นๆ </span>
+                </div>
+                </div>
+                </div> -->
+            </div>
+
+
+            <div id="arrybet" style="margin-top: 20px;">
+                <div class="titleContent">สถิติห้อง</div>
+                <div id="rsDataTable">
+                    <div class="row">
+                        <div class="col-sm div_stat">
+                            <div class="text_total">จำนวนทั้งหมด</div>
+                            <div class="area_stat_div">{{countingBet}}</div>
+                        </div>
+                        <div class="col-sm div_stat">
+                            <div class="area_stat_div" style="padding-bottom: 20px;">
+                                <div>{{percent_p}}%</div>
+                                <div name="btPlayer" id="MainContent_btPlayer" class="btn btn-lg btn-primary ">เพลเยอร์</div>
+                            </div>
+                        </div>
+                        <div class="col-sm div_stat">
+                            <div class="area_stat_div" style="padding-bottom: 20px;">
+                                <div>{{percent_t}}%</div>
+                                <div name="btPlayer" id="MainContent_btTie" class="btn btn-lg btn-success">เสมอ</div>
+                            </div>
+                        </div>
+                        <div class="col-sm div_stat">
+                            <div class="area_stat_div" style="padding-bottom: 20px;">
+                                <div>{{percent_b}}%</div>
+                                <div name="btPlayer" id="MainContent_btBanker" class="btn btn-lg btn-danger">แบงเกอร์</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="col-md-8 col-xs-12">
+            <div class="process_body">
+            <div class="main_body_col1_result_col1">
+            <div id="resultLabel"><div id="letter_wait">**รอผล**</div></div>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xs-12">
+            <div class="labelcount_number"><span id="count">{{countingBet}}</span></div>
+            <div class="main_body_col1_result_col1_labelcount_txt">จำนวนตาที่กรอก</div>
+        </div> -->
+
+
+
+        </div>
+
+        <div class="area_right">
+            <div id="arrymember">
+                <div class="titleStat"><img class="imgStat" src="/assets/images/icon/icon3.png" alt=""> สถิติล่าสุด</div>
+                <div id="rsDataTable">
+                    <h1>สถิติ ทั้งหมด</h1>
+                    <div class="statmem_body">
+
+                        <div>
+                            <div class="predict_1 col-md-4" style="padding:5px 0;font-size:18px">
+                                <ng-container *ngIf="count_win_all==null||count_win_all==''">
+                                    0
+                                </ng-container>
+                                <ng-container *ngIf="count_win_all!=null&&count_win_all!=''">
+                                    {{count_win_all}}
+                                </ng-container>
+
+                            </div>
+                            <div class="predict_2 col-md-4" style="padding:5px 0;font-size:18px">
+                                <ng-container *ngIf="count_draw_all==null||count_draw_all==''">
+                                    0
+                                </ng-container>
+                                <ng-container *ngIf="count_draw_all!=null&&count_draw_all!=''">
+                                    {{count_draw_all}}
+                                </ng-container>
+                            </div>
+                            <div class="predict_0 col-md-4" style="padding:5px 0;font-size:18px">
+                                <ng-container *ngIf="count_lose_all==null||count_lose_all==''">
+                                    0
+                                </ng-container>
+                                <ng-container *ngIf="count_lose_all!=null&&count_lose_all!=''">
+                                    {{count_lose_all}}
+                                </ng-container>
+                            </div>
+                        </div>
+
+                        <h1>สถิติ แพ้ชนะ วันนี้</h1>
+                        <div style="border-top:1px solid #000  ">
+
+                            <div class="predict_1 col-md-4" style="padding:5px 0;font-size:18px">
+                                <ng-container *ngIf="count_win==null||count_win==''">
+                                    0
+                                </ng-container>
+                                <ng-container *ngIf="count_win!=null&&count_win!=''">
+                                    {{count_win}}
+                                </ng-container>
+                            </div>
+                            <div class="predict_2 col-md-4" style="padding:5px 0;font-size:18px">
+                                <ng-container *ngIf="count_draw==null||count_draw==''">
+                                    0
+                                </ng-container>
+                                <ng-container *ngIf="count_draw!=null&&count_draw!=''">
+                                    {{count_draw}}
+                                </ng-container>
+                            </div>
+                            <div class="predict_0 col-md-4" style="padding:5px 0;font-size:18px">
+                                <ng-container *ngIf="count_lose==null||count_lose==''">
+                                    0
+                                </ng-container>
+                                <ng-container *ngIf="count_lose!=null&&count_lose!=''">
+                                    {{count_lose}}
+                                </ng-container>
+                            </div>
+                        </div>
+                        <div style="clear: right;"> </div>
+
+                        <h1>สถิติล่าสุด 15 รายการ </h1>
+
+                        <table id="statmem" class="table table-bordered" style="color: white;">
+                            <tbody>
+                                <tr>
+                                    <td>#</td>
+                                    <td>แทง</td>
+                                    <td>ผล</td>
+                                    <td>ชนะ/แพ้</td>
+                                    <td>เวลา</td>
+                                </tr>
+                                <ng-container *ngFor="let history of todoList; index as i; first as isFirst;let l = count">
+                                    <tr>
+                                        <td>{{i+1}}</td>
+                                        <td>
+                                            <ng-container *ngIf="history.bcrh_predict=='Player'">
+                                                <div class="chips_player"></div>
+                                            </ng-container>
+                                            <ng-container *ngIf="history.bcrh_predict=='Banker'">
+                                                <div class="chips_banker"></div>
+                                            </ng-container>
+                                        </td>
+                                        <td>
+                                            <ng-container *ngIf="history.bcrh_result=='banker'">
+                                                <div class="chips_banker"></div>
+                                            </ng-container>
+                                            <ng-container *ngIf="history.bcrh_result=='player'">
+                                                <div class="chips_player"></div>
+                                            </ng-container>
+                                            <ng-container *ngIf="history.bcrh_result=='tie'">
+                                                <div class="chips_tie"></div>
+                                            </ng-container>
+                                        </td>
+
+                                        <ng-container *ngIf="history.bcrh_win=='1'">
+                                            <td class="predict_1">
+                                                ชนะ
+                                            </td>
+
+                                        </ng-container>
+
+                                        <ng-container *ngIf="history.bcrh_win=='2'">
+                                            <td class="predict_0">
+                                                แพ้
+                                            </td>
+                                        </ng-container>
+
+                                        <ng-container *ngIf="history.bcrh_win=='3'">
+                                            <td class="predict_2">
+                                                เสมอ
+                                            </td>
+                                        </ng-container>
+
+                                        <td>{{history.bcrh_create_date}}</td>
+                                    </tr>
+                                </ng-container>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <div id="arrymember" class="area_qr">
+                <div class="titleStat"><img class="imgStat" src="/assets/images/icon/icon4.png" alt=""> ติดต่อเรา 24 ชั่วโมง</div>
+                <div id="rsDataTable" style="padding:30px;">
+                    <img style="width: 100%;" src="/upload/file/{{image_name_qr}}.{{image_type_qr}}" alt="">
+                    <div class="text_line">LINE ID : {{textQrCode}}</div>
+                </div>
+            </div>
+            <div class="image_bacara2">
+                <img src="/upload/file/{{image_name_ads}}.{{image_type_ads}}" alt="">
+                <!-- <img src="/assets/images/icon/3.png" alt=""> -->
+            </div>
+        </div>
+    </div>
+</div>

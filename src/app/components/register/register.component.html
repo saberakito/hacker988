@@ -1,0 +1,45 @@
+<!-- <iframe frameborder="0" height="550px" scrolling="no" src="https://winlot888.com/webbox/?token=1f0fe4af2993e20db6f9685ecdb3a13dffaeca17 " width="100%"></iframe> -->
+<div class="container">
+    <div class="titlePage">สมัครสมาชิก</div>
+    <form class="form-horizontal" #form='ngForm' (ngSubmit)="onSubmit(form)">
+        <fieldset>
+          <div class="control-group" >
+            <label class="control-label"  for="user_name">ชื่อ</label>
+            <div class="controls">
+              <input type="text" name="user_name" [(ngModel)]="user_name" placeholder="ชื่อ" class="input-xlarge form-control">
+            </div>
+          </div>
+
+          <div class="control-group" >
+            <label class="control-label"  for="username">username</label>
+            <div class="controls">
+              <input type="text" name="username" [(ngModel)]="username" placeholder="username" class="input-xlarge form-control">
+            </div>
+          </div>
+
+          <div class="control-group" >
+            <label class="control-label"  for="password">password</label>
+            <div class="controls">
+              <input type="text" name="password" [(ngModel)]="password" placeholder="password" class="input-xlarge form-control">
+            </div>
+          </div>
+       
+          <div class="control-group">
+            <label class="control-label" for="user_tel">เบอร์โทร</label>
+            <div class="controls">
+              <input type="text" name="user_tel" [(ngModel)]="user_tel"placeholder="เบอร์โทร" class="input-xlarge form-control">
+            </div>
+          </div>
+       
+    
+          <div class="control-group">
+            <div class="controls">
+              <button type="submit" class="btn btn-success">สมัครสมาชิก</button>
+              
+              <button type="button" routerLink="/home" class="btn btn-warning" style="margin-left:20px">หน้าหลัก</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    
+</div>
